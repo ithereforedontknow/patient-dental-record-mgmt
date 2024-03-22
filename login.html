@@ -18,7 +18,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar sticky-top bg-white">
       <div class="container">
         <a
@@ -55,27 +55,41 @@
         </ul>
       </div>
     </nav>
-    <section>
-      <div class="container my-4">
+    <div class="container">
+      <div class="position-absolute top-50 start-50 translate-middle">
         <form novalidate>
-          <div class="form-floating">
+          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          <div class="form-floating mb-2">
             <input
-              type="email"
-              id="email"
+              type="text"
               class="form-control"
-              placeholder="Enter your email"
+              id="uname"
+              autocomplete="off"
+              placeholder="ID"
               required
             />
-            <label for="email">Email</label>
-            <div class="invalid-feedback">Invalid Email</div>
-            <div class="valid-feedback">Valid Email</div>
+            <label for="uname">ID</label>
           </div>
-
-          <button class="btn btn-primary mt-2">Submit</button>
+          <div class="form-floating mb-2">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <label for="password">Password</label>
+          </div>
+          <button class="btn btn-success py-3 w-100 mb-2" type="submit">
+            Sign in
+          </button>
+          <div class="text-center">
+            <p>Not a member? <a href="#!">Register</a></p>
+          </div>
         </form>
       </div>
-    </section>
-    <footer class="pt-3 mt-5">
+    </div>
+    <footer class="mt-auto">
       <p class="text-center text-body-secondary">
         &copy; 2024 St. Apolonia Dental Center
       </p>

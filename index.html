@@ -17,8 +17,21 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .fade-in {
+        animation: fade-in 0.5s ease-in-out forwards;
+      }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body style="height: 100svh">
     <nav class="navbar sticky-top bg-white">
       <div class="container">
         <a
@@ -67,18 +80,50 @@
             loading="lazy"
           />
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="text-content">
           <h1 class="display-3 fw-bold lh-1 mb-3">
             St. Apolonia Dental Center
           </h1>
           <p class="lead">Where excellence in dentistry and art meet.</p>
-          <a
-            class="btn btn-success rounded-5 px-4"
+          <button
+            class="btn btn-success p-2 w-25"
             type="button"
-            href="login.html"
+            id="hideButton"
           >
             Login
-          </a>
+          </button>
+        </div>
+        <div class="container w-50 fade-in" id="login-form" hidden>
+          <form novalidate>
+            <h1 class="mb-3">Please sign in</h1>
+            <div class="form-floating mb-2 w-75">
+              <input
+                type="text"
+                class="form-control"
+                id="uname"
+                autocomplete="off"
+                placeholder="ID"
+                required
+              />
+              <label for="uname">ID</label>
+            </div>
+            <div class="form-floating mb-2 w-75">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                required
+              />
+              <label for="password">Password</label>
+            </div>
+            <button class="btn btn-success py-3 w-75 mb-2" type="submit">
+              Sign in
+            </button>
+            <div class="">
+              <p>Not a member? <a href="#">Register</a></p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -87,5 +132,16 @@
         &copy; 2024 St. Apolonia Dental Center
       </p>
     </footer>
+    <script>
+      const hideButton = document.getElementById("hideButton");
+      const textContent = document.getElementById("text-content");
+      const loginForm = document.getElementById("login-form");
+
+      hideButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        textContent.hidden = true; // Hide the text
+        loginForm.hidden = false; // Show the login form
+      });
+    </script>
   </body>
 </html>
