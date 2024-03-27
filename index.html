@@ -17,19 +17,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <style>
-      .fade-in {
-        animation: fade-in 0.5s ease-in-out forwards;
-      }
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
   </head>
   <body style="height: 100svh">
     <nav class="navbar sticky-top bg-white">
@@ -88,49 +75,121 @@
           <button
             class="btn btn-success p-2 w-25"
             type="button"
-            id="hideButton"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
           >
             Login
           </button>
         </div>
-        <div class="container w-50 fade-in" id="login-form" hidden>
-          <form novalidate>
-            <h1 class="mb-3">Please sign in</h1>
-            <div class="form-floating mb-2">
-              <input
-                type="text"
-                class="form-control"
-                id="uname"
-                autocomplete="off"
-                placeholder="ID"
-                required
-              />
-              <label for="uname">ID</label>
+        <div
+          class="modal fade"
+          id="loginModal"
+          tabindex="-1"
+          aria-labelledby="loginModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="loginModalLabel">Please sign in</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form novalidate>
+                  <div class="form-floating mb-2">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="uname"
+                      autocomplete="off"
+                      placeholder="ID"
+                      required
+                    />
+                    <label for="uname">ID</label>
+                  </div>
+                  <div class="form-floating mb-2">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Password"
+                      required
+                    />
+                    <label for="password">Password</label>
+                  </div>
+
+                  <div class="">
+                    <p>
+                      Not a member?
+                      <a
+                        type="button"
+                        class="link-success"
+                        data-bs-toggle="modal"
+                        data-bs-target="#registerModal"
+                        >Register</a
+                      >
+                    </p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-success">Signin</button>
+              </div>
             </div>
-            <div class="form-floating mb-2">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                required
-              />
-              <label for="password">Password</label>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="registerModal"
+          aria-hidden="true"
+          aria-labelledby="exampleModalToggleLabel"
+          tabindex="-1"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="exampleModalToggleLabel">
+                  Register
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">Register</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  Go back
+                </button>
+                <button
+                  class="btn btn-success"
+                  data-bs-target="#exampleModalToggle2"
+                  data-bs-toggle="modal"
+                >
+                  Register
+                </button>
+              </div>
             </div>
-            <button
-              class="btn btn-success py-2 mb-2"
-              type="button"
-              id="goBackButton"
-            >
-              Go back
-            </button>
-            <button class="btn btn-success py-2 mb-2" type="submit">
-              Sign in
-            </button>
-            <div class="">
-              <p>Not a member? <a href="#">Register</a></p>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -139,21 +198,5 @@
         &copy; 2024 St. Apolonia Dental Center
       </p>
     </footer>
-    <script>
-      const hideButton = document.getElementById("hideButton");
-      const textContent = document.getElementById("text-content");
-      const loginForm = document.getElementById("login-form");
-      const goBackButton = document.getElementById("goBackButton");
-      hideButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        textContent.hidden = true; // Hide the text
-        loginForm.hidden = false; // Show the login form
-      });
-      goBackButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        textContent.hidden = false; // Hide the login form
-        loginForm.hidden = true; // Show the text
-      });
-    </script>
   </body>
 </html>
