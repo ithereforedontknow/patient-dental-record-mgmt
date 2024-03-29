@@ -1,6 +1,5 @@
 # Patient Dental Records Management System
 
-
 ## Authors
 
 -
@@ -18,6 +17,7 @@ Javascript, HTML, CSS...
 Copy stuff
 
 Open powershell
+
 ```bash
   cd /
   git clone https://github.com/ithereforedontknow/patient-dental-record-mgmt.git
