@@ -13,24 +13,20 @@
   <?php
   include_once('includes/navbar.php');
   ?>
-  <div class="container px-4 mt-5 d-flex justify-content-center text-center" id="hero">
+  <div class="container px-4 mt-4 d-flex justify-content-center text-center" id="hero">
     <div class="">
       <h1 class="display-3 fw-bold mb-3">
         St. Apolonia Dental Center
       </h1>
-      <p class="lead">Where excellence in dentistry and art meet.</p>
-      <button class="btn btn-success py-3 px-5 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
-        Login
-      </button>
+      <h4 class="fw-light">Where excellence in dentistry and art meet.</h3>
     </div>
   </div>
   <div class="text-center">
-    <img src="assets/5540021.jpg" alt="dentist" class="img-fluid" style="max-width: 70%">
+    <img src="assets/5540021.jpg" alt="dentist" class="img-fluid" style="max-width: 40%">
   </div>
   <?php
   include_once('includes/features.php');
   include_once('includes/faq.php');
-  include_once('includes/about.php');
   ?>
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
