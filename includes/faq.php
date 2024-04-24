@@ -1,5 +1,5 @@
 <div class="container px-4 py-5" id="faq" style="height: 100vh;">
-    <h1 class="text-center display-4 fw-bold mb-5">Questions? Answers.</h1>
+    <h1 class="text-center display-5 fw-bold mb-5">Questions? Answers.</h1>
     <div class="accordion accordion-flush">
         <div class="accordion-item">
             <h1 class="accordion-header my-2">

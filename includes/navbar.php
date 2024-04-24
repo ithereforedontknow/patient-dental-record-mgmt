@@ -2,7 +2,7 @@
     <div class="container ">
         <h3>Gapuz Dentistry</h3>
         <ul class="nav justify-content-end">
-            <button class="btn btn-success py-1 px-4 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <button class="btn btn-success py-2 px-4 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
                 Login
             </button>
         </ul>

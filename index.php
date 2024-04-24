@@ -7,6 +7,7 @@
   <title>St. Apolonia Dental Center</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://kit.fontawesome.com/74741ba830.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -57,10 +58,10 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-secondary py-2 px-4 rounded-pill" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="submit" class="btn btn-success">Sign in</button>
+          <button type="submit" class="btn btn-success py-2 px-4 rounded-pill">Sign in</button>
         </div>
         </form>
       </div>
@@ -88,26 +89,23 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     $(document).ready(() => {
-      //login form submit
       $("#login_form").submit((e) => {
         e.preventDefault();
-        //get data
         $id = $("#id").val();
         $pass = $("#pass").val();
-        //pass data to login.php
         $.post("login.php", {
           id: $id,
           pass: $pass
         }, (data) => {
-          if (data == 'admin') { // if the response is non-admin redirect to non-admin dashboard
+          if (data == 'admin') {
             window.location.href = "admin/admin.php";
-          } else if (data == 'dentist') { // if the response is admin redirect to admin dashboard
+          } else if (data == 'staff') {
             window.location.href = "staff/staff.php";
-          } else if (data == 'user') {
+          } else if (data == 'patient') {
             window.location.href = "patient/patient.php";
           } else {
             Swal.fire({

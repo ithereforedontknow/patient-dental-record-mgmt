@@ -1,7 +1,7 @@
 <div class="bg-secondary bg-opacity-10">
     <div class="container d-flex align-items-center justify-content-center" id="featurettes" style="height: 100vh">
         <div>
-            <h2 class="text-center display-1 fw-bold">Experience
+            <h2 class="text-center display-3 fw-bold">Experience
             </h2>
             <h2 class="text-center display-6 fw-bold my-4">
                 <span class="text-success">Cosmetic</span> dentistry
