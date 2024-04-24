@@ -63,12 +63,10 @@
         overflow-y: auto;
     }
 </style>
-<div class="flex-shrink-0 p-3" style="width: 280px;">
+<div class="flex-shrink-0 p-3" style="width: 280px; height:100svh;">
     <a href="" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-        <a href="" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-            <i class="fa-solid fa-tooth fa-2xl me-2" style="color: #198754;"></i>
-            <span class="fs-5 fw-semibold">Gapuz Dentistry</span>
-        </a>
+        <i class="fa-solid fa-tooth fa-2xl me-2" style="color: #198754;"></i>
+        <span class="fs-5 fw-semibold">Gapuz Dentistry</span>
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
@@ -116,14 +114,9 @@
         </li>
         <li class="border-top my-3"></li>
         <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                <i class="fa-solid fa-user fa-xl me-2" style="color: #198754;"></i> Account
+            <button id="logout" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                <i class="fa-solid fa-right-from-bracket fa-xl me-2" style="color: #198754;"></i> Logout
             </button>
-            <div class="collapse show" id="account-collapse">
-                <div class="container mx-4">
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded" id="logout">Logout</a>
-                </div>
-            </div>
         </li>
     </ul>
 </div>
