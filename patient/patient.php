@@ -11,19 +11,19 @@
   <script src="https://kit.fontawesome.com/74741ba830.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="height: 100svh">
+<body>
   <nav class="navbar sticky-top bg-white mt-2 border-bottom">
-    <div class="container ">
+    <div class="container text-secondary-emphasis">
       <h3>Gapuz Dentistry</h3>
       <ul class="nav justify-content-end">
-        <button class="btn btn-success py-2 px-4 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" id="logout">
+        <button class="btn btn-success py-2 px-4 rounded-pill mb-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" id="logout">
           Logout
         </button>
       </ul>
     </div>
   </nav>
-  <div class="container px-4 mt-4 d-flex justify-content-center text-center" id="hero">
-    <div class="">
+  <div class="container px-4 mt-4 d-flex justify-content-center text-center text-secondary-emphasis">
+    <div>
       <h1 class="display-3 fw-bold mb-3">
         Hello there!
       </h1>
