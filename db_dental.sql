@@ -32,7 +32,7 @@ CREATE TABLE `tbl_users`  (
 -- Records of tbl_users
 -- ----------------------------
 INSERT INTO `tbl_users` VALUES (2401, 'admin', 'admin');
-INSERT INTO `tbl_users` VALUES (2402, 'dentist', 'dentist');
+INSERT INTO `tbl_users` VALUES (2402, 'staff', 'staff');
 INSERT INTO `tbl_users` VALUES (2403, 'test', 'patient');
 
 SET FOREIGN_KEY_CHECKS = 1;
