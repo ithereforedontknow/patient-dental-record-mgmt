@@ -63,21 +63,43 @@
     .scrollarea {
         overflow-y: auto;
     }
+
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100px !important;
+            /* Apply !important to override inline styles */
+        }
+
+        .collapse.show {
+            display: block !important;
+            /* Ensure collapsed items are visible */
+        }
+    }
 </style>
-<div class="flex-shrink-0 p-3 border-end" style="width: 300px; height: 100svh">
+<div class="sidebar flex-shrink-0 p-3 border-end" style="width: 300px; height: 100svh; ">
     <a href="" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <i class="fa-solid fa-tooth fa-2xl mx-1" style="color: #198754;"></i>
         <span class="fs-4 fw-semibold text-secondary-emphasis">Gapuz Dentistry</span>
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                <i class="fa-solid fa-gauge fa-xl"" style=" color: #198754;"></i> <span class="ms-2">Dashboard</span>
+            </button>
+            <div class="collapse show" id="dashboard-collapse">
+                <div class="container mx-2">
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis" href="admin.php">Overview</a>
+                </div>
+            </div>
+        </li>
+        <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed  text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#patient-collapse" aria-expanded="true">
                 <i class="fa-solid fa-hospital-user fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">Patient Information</span>
             </button>
             <div class="collapse show" id="patient-collapse">
                 <div class="container mx-2">
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Add Patient Info</a>
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Search/Update Patient</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis" href="add-patient.php">Add Patient Info</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis" href="view-patient.php">View Patient</a>
                 </div>
             </div>
         </li>
@@ -88,7 +110,7 @@
             <div class="collapse" id="record-collapse">
                 <div class="container mx-2">
                     <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Add Record</a>
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Search/Update Record</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">View Records</a>
                 </div>
             </div>
         </li>
@@ -98,15 +120,15 @@
             </button>
             <div class="collapse" id="user-collapse">
                 <div class="container mx-2">
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Add User</a>
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Search/Update User</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis me-5">Add User</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">View Users</a>
                 </div>
             </div>
         </li>
         <li class="border-top my-3"></li>
         <li class="mb-1">
             <button id="logout" class="btn d-inline-flex align-items-center rounded border-0 fw-semibold text-secondary-emphasis">
-                <i class="fa-solid fa-right-from-bracket fa-xl mx-1" style="color: #198754;"></i> Logout
+                <i class="fa-solid fa-right-from-bracket fa-xl mx-2" style="color: #198754;"></i> Logout
             </button>
         </li>
     </ul>

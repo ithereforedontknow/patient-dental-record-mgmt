@@ -17,15 +17,15 @@
     <?php
     include_once('./includes/sidebar.php');
     ?>
-    <div class="container text-center d-flex align-items-center justify-content-center">
+    <div class="container ">
       <div class="text-secondary-emphasis">
-        <h1 class="display-1 fw-bold">Hello!</h1>
-        <h2>Welcome, admin</h2>
+        <h1 class="display-3">Welcome!</h1>
       </div>
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

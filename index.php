@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://kit.fontawesome.com/74741ba830.js" crossorigin="anonymous"></script>
   <style>
-    img {
-      width: 40%;
-    }
-
     @media screen and (max-width: 768px) {
       img {
         width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 2160px) {
+      img {
+        width: 45%;
       }
     }
 
