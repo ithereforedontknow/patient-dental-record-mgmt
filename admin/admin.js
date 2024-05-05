@@ -176,6 +176,8 @@ function addDentalHistory(patient_id) {
           }
         });
       } else {
+        // TODO: fetch dental history
+
         $("#prev-dentist-fname").text();
         console.log(tbl_patient_info.first_name);
         $("#viewDentalHistory").modal("show");
