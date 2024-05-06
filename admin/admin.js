@@ -154,7 +154,7 @@ function viewPatientInformation(patient_id) {
 */
 function addDentalHistory(patient_id) {
   $.post(
-    "./view/view-patient-info.php",
+    "./view/view-dental-history.php",
     {
       patient_id: patient_id,
     },
@@ -176,10 +176,9 @@ function addDentalHistory(patient_id) {
           }
         });
       } else {
-        // TODO: fetch dental history
-
-        $("#prev-dentist-fname").text();
-        console.log(tbl_patient_info.first_name);
+        $("#prev-dentist-fname").text(tbl_patient_info.d_first_name);
+        $("#prev-dentist-lname").text(tbl_patient_info.d_last_name);
+        $("#last-dental-visit").text(tbl_patient_info.last_dental_visit);
         $("#viewDentalHistory").modal("show");
       }
     }

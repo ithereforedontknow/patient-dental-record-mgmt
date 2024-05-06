@@ -10,7 +10,7 @@ if ($_POST["dental_history_id"]) {
     ];
 
     $sql = "INSERT INTO tbl_dental_history
-        (dental_history_id, first_name, last_name, last_dental_visit)
+        (dental_history_id, d_first_name, d_last_name, last_dental_visit)
         VALUES (:dental_history_id, :firstName, :lastName, :last_dental_visit)";
 
     $stmt = $conn->prepare($sql);
