@@ -1,4 +1,4 @@
-<div class="modal fade" id="dentalHistoryModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="addDentalHistoryModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">

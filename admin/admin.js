@@ -172,10 +172,12 @@ function addDentalHistory(patient_id) {
         }).then((result) => {
           if (result.isConfirmed) {
             $("#patient_id").text(tbl_patient_info.patient_id);
-            $("#dentalHistoryModal").modal("show");
+            $("#addDentalHistoryModal").modal("show");
           }
         });
       } else {
+        // view dental history
+        $("#prev-dentist-id").text(tbl_patient_info.dental_history_id);
         $("#prev-dentist-fname").text(tbl_patient_info.d_first_name);
         $("#prev-dentist-lname").text(tbl_patient_info.d_last_name);
         $("#last-dental-visit").text(tbl_patient_info.last_dental_visit);
@@ -218,6 +220,7 @@ $("#dentalHistoryForm").submit((e) => {
                 icon: "success",
                 confirmButtonColor: "#198754",
               });
+              $("#addDentalHistoryModal").modal("hide");
             } else {
               Swal.fire({
                 icon: "error",
@@ -239,3 +242,111 @@ $("#dentalHistoryForm").submit((e) => {
       });
     });
 });
+
+/*
+    Edit Patient Dental History
+*/
+
+function editDentalHistory(prev_dentist_id) {
+  $("#viewDentalHistory").modal("hide");
+  $("#editDentalHistoryModal").modal("show");
+  $("#dental_history_id").text(prev_dentist_id);
+}
+
+$("#editDentalHistoryForm").submit((e) => {
+  e.preventDefault();
+  const dental_history_id = $("#dental_history_id").text();
+  const e_first_name = $("#e_first_name").val();
+  const e_last_name = $("#e_last_name").val();
+  const e_last_dental_visit = $("#e_last_dental_visit").val();
+  Swal.fire({
+    title: "Are you sure?",
+    text: "Add patient dental history",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#198754",
+    confirmButtonText: "Add",
+  })
+    .then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "./edit/edit-dental-history.php",
+          type: "POST",
+          data: {
+            dental_history_id: dental_history_id,
+            e_first_name: e_first_name,
+            e_last_name: e_last_name,
+            e_last_dental_visit: e_last_dental_visit,
+          },
+          success: function (respose) {
+            if (respose == "success") {
+              Swal.fire({
+                title: "Success!",
+                text: "Patient Dental History added!",
+                icon: "success",
+                confirmButtonColor: "#198754",
+              });
+              $("#editDentalHistoryModal").modal("hide");
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Failed to add patient dental history",
+                confirmButtonColor: "#198754",
+                text: respose,
+              });
+            }
+          },
+        });
+      }
+    })
+    .catch((err) => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        confirmButtonColor: "#198754",
+        text: err,
+      });
+    });
+});
+
+/*
+    Add Medical History
+*/
+
+function addMedicalHistory(patient_id) {
+  $("#addMedicalHistoryModal").modal("show");
+}
+function addMedicalHistory(patient_id) {
+  $.post(
+    "./view/view-medical-history.php",
+    {
+      patient_id: patient_id,
+    },
+    function (data) {
+      let tbl_patient_info = JSON.parse(data);
+      if (!tbl_patient_info.medical_history_id) {
+        Swal.fire({
+          icon: "info",
+          title: "Patient has no medical history yet!",
+          showCancelButton: true,
+          confirmButtonColor: "#198754",
+          confirmButtonText: "Yes",
+          cancelButtonText: "No",
+          text: "Do you want to add one?",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $("#patient_id").text(tbl_patient_info.patient_id);
+            $("#addMedicalHistoryModal").modal("show");
+          }
+        });
+      } else {
+        // view dental history
+        $("#prev-dentist-id").text(tbl_patient_info.dental_history_id);
+        $("#prev-dentist-fname").text(tbl_patient_info.d_first_name);
+        $("#prev-dentist-lname").text(tbl_patient_info.d_last_name);
+        $("#last-dental-visit").text(tbl_patient_info.last_dental_visit);
+        $("#viewDentalHistory").modal("show");
+      }
+    }
+  );
+}

@@ -12,15 +12,15 @@ if (isset($_POST['patient_id'])) {
         $stmt->execute();
         $patient_info = $stmt->fetch(PDO::FETCH_ASSOC);
         // Fetch dental history
-        if ($patient_info['dental_history_id']) {
-            $dental_history_id = $patient_info['dental_history_id'];
-            $sql = "SELECT * FROM tbl_dental_history WHERE dental_history_id = :dental_history_id";
+        if ($patient_info['medical_history_id']) {
+            $medical_history_id = $patient_info['medical_history_id'];
+            $sql = "SELECT * FROM tbl_medical_history WHERE medical_history_id = :medical_history_id";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':dental_history_id', $dental_history_id);
+            $stmt->bindParam(':medical_history_id', $medical_history_id);
             $stmt->execute();
-            $dental_history = $stmt->fetch(PDO::FETCH_ASSOC);
+            $medical_history = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $response = array_merge($patient_info, $dental_history);
+            $response = array_merge($patient_info, $medical_history);
         } else {
             $response = $patient_info;
         }

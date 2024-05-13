@@ -23,13 +23,13 @@
                 <table class="patient-table text-center" id="patient-table">
                     <thead>
                         <tr>
-                            <th scope="col" style="width: 5%;">#</th>
-                            <th scope="col" style="width: 15%;">Lastname</th>
-                            <th scope="col" style="width: 15%;">Firstname</th>
-                            <th scope="col" style="width: 15%;">Middlename</th>
-                            <th scope="col" style="width: 5%;">Sex</th>
-                            <th scope="col" style="width: 15%;">Nickname</th>
-                            <th scope="col" style="width: 30%;">Action</th>
+                            <th class="text-center" scope="col" style="width: 5%;">#</th>
+                            <th class="text-center" scope="col" style="width: 15%;">Lastname</th>
+                            <th class="text-center" scope="col" style="width: 15%;">Firstname</th>
+                            <th class="text-center" scope="col" style="width: 15%;">Middlename</th>
+                            <th class="text-center" scope="col" style="width: 5%;">Sex</th>
+                            <th class="text-center" scope="col" style="width: 15%;">Nickname</th>
+                            <th class="text-center" scope="col" style="width: 30%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,12 +42,12 @@
                             $i = 1;
                             foreach ($conn->query($sql) as $row) {
                         ?> <tr>
-                                    <th><?= $i++; ?></th>
-                                    <td><?= $row["last_name"]; ?></td>
-                                    <td><?= $row["first_name"]; ?></td>
-                                    <td><?= $row["middle_name"]; ?></td>
-                                    <td><?= $row["sex"]; ?></td>
-                                    <td><?= $row["nickname"]; ?></td>
+                                    <th class="text-center"><?= $i++; ?></th>
+                                    <td class="text-center"><?= $row["last_name"]; ?></td>
+                                    <td class="text-center"><?= $row["first_name"]; ?></td>
+                                    <td class="text-center"><?= $row["middle_name"]; ?></td>
+                                    <td class="text-center"><?= $row["sex"]; ?></td>
+                                    <td class="text-center"><?= $row["nickname"]; ?></td>
 
                                     <td class="exclude-print">
                                         <button class="btn btn-outline-dark" onclick="viewPatientInformation(<?= $row['patient_id']; ?>)">
@@ -81,7 +81,8 @@
         include_once('./includes/view-patient-info-modal.php');
         include_once('./includes/add-dental-history-modal.php');
         include_once('./includes/view-dental-history-modal.php');
-
+        include_once('./includes/edit-dental-history-modal.php');
+        include_once('./includes/add-medical-history-modal.php');
         ?>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
