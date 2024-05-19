@@ -76,7 +76,7 @@
         }
     }
 </style>
-<div class="sidebar flex-shrink-0 p-3 border-end" style="width: 300px; height: 100svh; ">
+<div class="sidebar flex-shrink-0 p-3 border-end" style="width: 300px; height: 100vh; position: sticky; top: 0;">
     <a href="" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <i class="fa-solid fa-tooth fa-2xl mx-1" style="color: #198754;"></i>
         <span class="fs-4 fw-semibold text-secondary-emphasis">Gapuz Dentistry</span>
@@ -84,7 +84,7 @@
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
-                <i class="fa-solid fa-gauge fa-xl"" style=" color: #198754;"></i> <span class="ms-2">Dashboard</span>
+                <i class="fa-solid fa-gauge fa-xl" style=" color: #198754;"></i> <span class="ms-2">Dashboard</span>
             </button>
             <div class="collapse show" id="dashboard-collapse">
                 <div class="container mx-2">
@@ -93,7 +93,17 @@
             </div>
         </li>
         <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed  text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#patient-collapse" aria-expanded="true">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#user-collapse" aria-expanded="true">
+                <i class="fa-solid fa-users fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">User Management</span>
+            </button>
+            <div class="collapse show" id="user-collapse">
+                <div class="container mx-2">
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis" href="view-user.php">View Users</a>
+                </div>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#patient-collapse" aria-expanded="true">
                 <i class="fa-solid fa-hospital-user fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">Patient Information</span>
             </button>
             <div class="collapse show" id="patient-collapse">
@@ -104,24 +114,22 @@
             </div>
         </li>
         <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed  text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#record-collapse" aria-expanded="false">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#record-collapse" aria-expanded="true">
                 <i class="fa-solid fa-notes-medical fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">Record Management</span>
             </button>
-            <div class="collapse" id="record-collapse">
+            <div class="collapse show" id="record-collapse">
                 <div class="container mx-2">
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">Add Record</a>
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">View Records</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis" href="add-record.php">Add Record</a>
                 </div>
             </div>
         </li>
         <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#user-collapse" aria-expanded="false">
-                <i class="fa-solid fa-users fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">User Management</span>
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#report-collapse" aria-expanded="true">
+                <i class="fa-solid fa-notes-medical fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">Generate Report</span>
             </button>
-            <div class="collapse" id="user-collapse">
+            <div class="collapse show" id="report-collapse">
                 <div class="container mx-2">
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis me-5">Add User</a>
-                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis">View Users</a>
+                    <a class="btn link-body-emphasis d-inline-flex text-decoration-none rounded text-secondary-emphasis" href="generate-report.php">Select Report</a>
                 </div>
             </div>
         </li>
@@ -133,6 +141,7 @@
         </li>
     </ul>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script>
     $("#logout").click(() => {

@@ -12,19 +12,57 @@
 </head>
 
 <body>
+
   <main class="d-flex flex-nowrap">
     <?php
     include_once('./includes/sidebar.php');
     ?>
-    <div class="container text-center d-flex align-items-center justify-content-center">
+    <div class="container">
       <div class="text-secondary-emphasis">
-        <h1 class="display-1 fw-bold">Hello!</h1>
-        <h2>and welcome!</h2>
+        <h1 class="display-3">Welcome!</h1>
+        <div>
+          <canvas id="patientChart"></canvas>
+        </div>
       </div>
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    fetch('get_patient_data.php')
+      .then(response => response.json())
+      .then(data => {
+        // Extract the labels (months) and data (patient counts) from the response
+        const labels = data.map(entry => `${entry.month}/${entry.year}`);
+        const patientCounts = data.map(entry => entry.patient_count);
+
+        // Create the chart
+        const ctx = document.getElementById('patientChart').getContext('2d');
+        const chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Number of Patients',
+              data: patientCounts,
+              backgroundColor: 'rgba(25,135,84,255)',
+              borderColor: 'rgba(25,135,84,255)',
+              borderWidth: 3,
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      })
+      .catch(error => console.error(error));
+  </script>
+
 </body>
 
 </html>

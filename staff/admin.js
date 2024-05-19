@@ -880,11 +880,7 @@ $("#addRecordForm").submit((e) => {
       });
     });
 });
-function editRecord(e_patient_id) {
-  $("#viewRecordModal").modal("hide");
-  $("#editRecordModal").modal("show");
-  $("#e_patient_id_record").text(e_patient_id);
-}
+
 /*
     Print Patient Information
 */

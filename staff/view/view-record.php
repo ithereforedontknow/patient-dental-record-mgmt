@@ -12,11 +12,11 @@ if (isset($_POST['patient_id'])) {
         $stmt->execute();
         $patient_info = $stmt->fetch(PDO::FETCH_ASSOC);
         // Fetch dental history
-        if ($patient_info['med_history_id']) {
-            $med_history_id = $patient_info['med_history_id'];
-            $sql = "SELECT * FROM tbl_medical_history WHERE med_history_id = :med_history_id";
+        if ($patient_info['record_id']) {
+            $record_id = $patient_info['record_id'];
+            $sql = "SELECT * FROM tbl_records WHERE record_id = :record_id";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':med_history_id', $med_history_id);
+            $stmt->bindParam(':record_id', $record_id);
             $stmt->execute();
             $medical_history = $stmt->fetch(PDO::FETCH_ASSOC);
             $response = array_merge($patient_info, $medical_history);
