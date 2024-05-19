@@ -340,11 +340,6 @@ function addMedicalHistory(patient_id) {
           }
         });
       } else {
-        // view dental history
-        $("#prev-dentist-id").text(tbl_patient_info.dental_history_id);
-        $("#prev-dentist-fname").text(tbl_patient_info.d_first_name);
-        $("#prev-dentist-lname").text(tbl_patient_info.d_last_name);
-        $("#last-dental-visit").text(tbl_patient_info.last_dental_visit);
         $("#viewDentalHistory").modal("show");
       }
     }
