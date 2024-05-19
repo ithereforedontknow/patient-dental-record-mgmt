@@ -10,8 +10,7 @@ if ($_POST["dental_history_id"]) {
     ];
 
     $sql = "UPDATE tbl_dental_history 
-        SET 
-        d_first_name = :e_first_name,
+        SET d_first_name = :e_first_name,
         d_last_name = :e_last_name,
         last_dental_visit = :e_last_dental_visit
         WHERE dental_history_id = :dental_history_id";

@@ -31,7 +31,7 @@
                 <p class="mb-2 fs-5 text-success fw-semibold">Has any of the following: <span class="text-dark" id="view_has_following"></span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="editMedicalHistory($('#view_patient_id').text())">Add</button>
+                <button type="button" class="btn btn-success" onclick="editMedicalHistory($('#view_patient_id').text())">Edit</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>

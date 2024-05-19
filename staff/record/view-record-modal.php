@@ -15,7 +15,7 @@
                 <p class="mb-2 fs-5 text-success fw-semibold">Followup checkup date: <span class="text-dark" id="view_followup"></span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="editRecord($('#prev-dentist-id').text())">Edit</button>
+                <button type="button" class="btn btn-success" onclick="editRecord($('#view_patient_id').text())">Edit</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>

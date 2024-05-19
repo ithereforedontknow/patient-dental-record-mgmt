@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-1" id="exampleModalLabel">Add Medical History</h1>
+                <h1 class="modal-title fs-1" id="exampleModalLabel">Edit Medical History</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -133,28 +133,28 @@
                         <div class="form-group">
                             <label>8. Are you allergic to any of the following?</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="e_allergies[]" id="e_localAnesthetic" value="Local Anesthetic">
-                                <label class="form-check-label" for="e_localAnesthetic">Local Anesthetic</label>
+                                <input class="form-check-input" type="checkbox" name="allergy[]" id="localAnesthetic" value="Local Anesthetic">
+                                <label class="form-check-label" for="localAnesthetic">Local Anesthetic</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="e_allergies[]" id="e_penicilinAntibiotics" value="Penicillin Antibiotics">
-                                <label class="form-check-label" for="e_penicilinAntibiotics">Penicillin Antibiotics</label>
+                                <input class="form-check-input" type="checkbox" name="allergy[]" id="penicilinAntibiotics" value="Penicillin Antibiotics">
+                                <label class="form-check-label" for="penicilinAntibiotics">Penicillin Antibiotics</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="e_allergies[]" id="e_sulfaDrugs" value="Sulfa Drugs">
-                                <label class="form-check-label" for="e_sulfaDrugs">Sulfa Drugs</label>
+                                <input class="form-check-input" type="checkbox" name="allergy[]" id="sulfaDrugs" value="Sulfa Drugs">
+                                <label class="form-check-label" for="sulfaDrugs">Sulfa Drugs</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="e_allergies[]" id="e_aspirin" value="Aspirin">
-                                <label class="form-check-label" for="e_aspirin">Aspirin</label>
+                                <input class="form-check-input" type="checkbox" name="allergy[]" id="aspirin" value="Aspirin">
+                                <label class="form-check-label" for="aspirin">Aspirin</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="e_allergies[]" id="e_latex" value="Latex">
-                                <label class="form-check-label" for="e_latex">Latex</label>
+                                <input class="form-check-input" type="checkbox" name="allergy[]" id="latex" value="Latex">
+                                <label class="form-check-label" for="latex">Latex</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="e_allergies[]" id="e_other1" value="Other1">
-                                <label class="form-check-label" for="e_other1">Other</label>
+                                <input class="form-check-input" type="checkbox" name="allergy[]" id="other1" value="Other1">
+                                <label class="form-check-label" for="other1">Other</label>
                             </div>
                             <div class="form-group">
                                 <label for="e_otherAllergies">If other, please specify:</label>
@@ -214,157 +214,158 @@
                         <div class="form-group">
                             <label>Do you have or have you had any of the following? Check which apply:</label>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_highBloodPressure">
-                                <label class="form-check-label" for="e_highBloodPressure">High Blood Pressure</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="highBloodPressure">
+                                <label class="form-check-label" for="highBloodPressure">High Blood Pressure</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_lowBloodPressure">
-                                <label class="form-check-label" for="e_lowBloodPressure">Low Blood Pressure</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="lowBloodPressure">
+                                <label class="form-check-label" for="lowBloodPressure">Low Blood Pressure</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_epilepsy">
-                                <label class="form-check-label" for="e_epilepsy">Epilepsy / Convulsions</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="epilepsy">
+                                <label class="form-check-label" for="epilepsy">Epilepsy / Convulsions</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_aids">
-                                <label class="form-check-label" for="e_aids">AIDS / HIV Infection</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="aids">
+                                <label class="form-check-label" for="aids">AIDS / HIV Infection</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_std">
-                                <label class="form-check-label" for="e_std">Sexually Transmitted Disease</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="std">
+                                <label class="form-check-label" for="std">Sexually Transmitted Disease</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_stomachTroubles">
-                                <label class="form-check-label" for="e_stomachTroubles">Stomach Troubles / Ulcers</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="stomachTroubles">
+                                <label class="form-check-label" for="stomachTroubles">Stomach Troubles / Ulcers</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_faintingSeizure">
-                                <label class="form-check-label" for="e_faintingSeizure">Fainting Seizure</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="faintingSeizure">
+                                <label class="form-check-label" for="faintingSeizure">Fainting Seizure</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_rapidWeightLoss">
-                                <label class="form-check-label" for="e_rapidWeightLoss">Rapid Weight Loss</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="rapidWeightLoss">
+                                <label class="form-check-label" for="rapidWeightLoss">Rapid Weight Loss</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_radiationTherapy">
-                                <label class="form-check-label" for="e_radiationTherapy">Radiation Therapy</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="radiationTherapy">
+                                <label class="form-check-label" for="radiationTherapy">Radiation Therapy</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_jointReplacement">
-                                <label class="form-check-label" for="e_jointReplacement">Joint Replacement / Implant</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="jointReplacement">
+                                <label class="form-check-label" for="jointReplacement">Joint Replacement / Implant</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_heartSurgery">
-                                <label class="form-check-label" for="e_heartSurgery">Heart Surgery</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="heartSurgery">
+                                <label class="form-check-label" for="heartSurgery">Heart Surgery</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_heartAttack">
-                                <label class="form-check-label" for="e_heartAttack">Heart Attack</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="heartAttack">
+                                <label class="form-check-label" for="heartAttack">Heart Attack</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_thyroidProblem">
-                                <label class="form-check-label" for="e_thyroidProblem">Thyroid Problem</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="thyroidProblem">
+                                <label class="form-check-label" for="thyroidProblem">Thyroid Problem</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_heartDisease">
-                                <label class="form-check-label" for="e_heartDisease">Heart Disease</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="heartDisease">
+                                <label class="form-check-label" for="heartDisease">Heart Disease</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_heartMurmur">
-                                <label class="form-check-label" for="e_heartMurmur">Heart Murmur</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="heartMurmur">
+                                <label class="form-check-label" for="heartMurmur">Heart Murmur</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_hepatitisLiverDisease">
-                                <label class="form-check-label" for="e_hepatitisLiverDisease">Hepatitis / Liver Disease</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="hepatitisLiverDisease">
+                                <label class="form-check-label" for="hepatitisLiverDisease">Hepatitis / Liver Disease</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_rheumaticFever">
-                                <label class="form-check-label" for="e_rheumaticFever">Rheumatic Fever</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="rheumaticFever">
+                                <label class="form-check-label" for="rheumaticFever">Rheumatic Fever</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_hayFever">
-                                <label class="form-check-label" for="e_hayFever">Hay Fever / Allergies</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="hayFever">
+                                <label class="form-check-label" for="hayFever">Hay Fever / Allergies</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_respiratoryProblems">
-                                <label class="form-check-label" for="e_respiratoryProblems">Respiratory Problems</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="respiratoryProblems">
+                                <label class="form-check-label" for="respiratoryProblems">Respiratory Problems</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_hepatitisJaundice">
-                                <label class="form-check-label" for="e_hepatitisJaundice">Hepatitis / Jaundice</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="hepatitisJaundice">
+                                <label class="form-check-label" for="hepatitisJaundice">Hepatitis / Jaundice</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_tuberculosis">
-                                <label class="form-check-label" for="e_tuberculosis">Tuberculosis</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="tuberculosis">
+                                <label class="form-check-label" for="tuberculosis">Tuberculosis</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_suddenAnkles">
-                                <label class="form-check-label" for="e_suddenAnkles">Swollen Ankles</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="suddenAnkles">
+                                <label class="form-check-label" for="suddenAnkles">Swollen Ankles</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_kidneyDisease">
-                                <label class="form-check-label" for="e_kidneyDisease">Kidney Disease</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="kidneyDisease">
+                                <label class="form-check-label" for="kidneyDisease">Kidney Disease</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_diabetes">
-                                <label class="form-check-label" for="e_diabetes">Diabetes</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="diabetes">
+                                <label class="form-check-label" for="diabetes">Diabetes</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_chestPain">
-                                <label class="form-check-label" for="e_chestPain">Chest Pain</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="chestPain">
+                                <label class="form-check-label" for="chestPain">Chest Pain</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_stroke">
-                                <label class="form-check-label" for="e_stroke">Stroke</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="stroke">
+                                <label class="form-check-label" for="stroke">Stroke</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_cancer">
-                                <label class="form-check-label" for="e_cancer">Cancer / Tumors</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="cancer">
+                                <label class="form-check-label" for="cancer">Cancer / Tumors</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_anemia">
-                                <label class="form-check-label" for="e_anemia">Anemia</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="anemia">
+                                <label class="form-check-label" for="anemia">Anemia</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_angina">
-                                <label class="form-check-label" for="e_angina">Angina</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="angina">
+                                <label class="form-check-label" for="angina">Angina</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_asthma">
-                                <label class="form-check-label" for="e_asthma">Asthma</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="asthma">
+                                <label class="form-check-label" for="asthma">Asthma</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_emphysema">
-                                <label class="form-check-label" for="e_emphysema">Emphysema</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="emphysema">
+                                <label class="form-check-label" for="emphysema">Emphysema</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_bleedingProblems">
-                                <label class="form-check-label" for="e_bleedingProblems">Bleeding Problems</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="bleedingProblems">
+                                <label class="form-check-label" for="bleedingProblems">Bleeding Problems</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_bloodDiseases">
-                                <label class="form-check-label" for="e_bloodDiseases">Blood Diseases</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="bloodDiseases">
+                                <label class="form-check-label" for="bloodDiseases">Blood Diseases</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_headInjuries">
-                                <label class="form-check-label" for="e_headInjuries">Head Injuries</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="headInjuries">
+                                <label class="form-check-label" for="headInjuries">Head Injuries</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_arthritisRheumatism">
-                                <label class="form-check-label" for="e_arthritisRheumatism">Arthritis / Rheumatism</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="arthritisRheumatism">
+                                <label class="form-check-label" for="arthritisRheumatism">Arthritis / Rheumatism</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" name="e_hasFollowing[]" type="checkbox" id="e_other">
-                                <label class="form-check-label" for="e_other">Other</label>
+                                <input class="form-check-input" name="has[]" type="checkbox" id="other">
+                                <label class="form-check-label" for="other">Other</label>
                             </div>
                         </div>
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-success">Edit</button>
-                </form>
                 <button type="button" class="btn btn-secondary" data-bs-target="#viewMedicalHistory" data-bs-toggle="modal">Back</button>
+                <button type="submit" class="btn btn-success">Update</button>
+                </form>
             </div>
 
         </div>
     </div>
+</div>

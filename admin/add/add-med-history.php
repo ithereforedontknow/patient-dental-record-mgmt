@@ -19,7 +19,7 @@ if ($_POST["patient_id_med"]) {
         "medicationDetails" => $_POST["medicationDetails"],
         "tobaccoUse" => $_POST["tobaccoUse"],
         "alcoholDrugs" => $_POST["alcoholDrugs"],
-        "allergies" => isset($_POST["allergies"]) ? implode(",", $_POST["allergies"]) : '',
+        "allergies" => isset($_POST["allergies"]) ? implode(", ", $_POST["allergies"]) : '',
         "otherAllergies" => $_POST["otherAllergies"],
         "bleedingTime" => $_POST["bleedingTime"],
         "pregnant" => $_POST["pregnant"],
@@ -27,7 +27,7 @@ if ($_POST["patient_id_med"]) {
         "birthControl" => $_POST["birthControl"],
         "bloodType" => $_POST["bloodType"],
         "bloodPressure" => $_POST["bloodPressure"],
-        "conditions" => isset($_POST["conditions"]) ? implode(",", $_POST["conditions"]) : ''
+        "conditions" => isset($_POST["conditions"]) ? implode(", ", $_POST["conditions"]) : ''
     ];
 
     $sql = "INSERT INTO tbl_medical_history 

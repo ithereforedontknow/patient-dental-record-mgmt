@@ -2,12 +2,12 @@
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-1" id="exampleModalLabel">Add Record</h1>
+                <h1 class="modal-title fs-1" id="exampleModalLabel">Edit Record</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p class="mb-2 fs-5">Patient ID: <span id="e_patient_id_record"></span></p>
-                <form id="addRecordForm">
+                <form id="editRecordForm">
                     <div class="form-group">
                         <label for="diagnosis">Date:</label>
                         <input type="date" class="form-control" id="e_date" name="date" required>
@@ -40,3 +40,4 @@
             </div>
         </div>
     </div>
+</div>

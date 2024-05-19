@@ -26,8 +26,6 @@
                             <th class="text-center" scope="col" style="width: 15%;">Lastname</th>
                             <th class="text-center" scope="col" style="width: 15%;">Firstname</th>
                             <th class="text-center" scope="col" style="width: 15%;">Middlename</th>
-                            <th class="text-center" scope="col" style="width: 5%;">Sex</th>
-                            <th class="text-center" scope="col" style="width: 15%;">Created at</th>
                             <th class="text-center" scope="col" style="width: 10%;">Action</th>
                         </tr>
                     </thead>
@@ -44,8 +42,6 @@
                                     <td class="text-center"><?= $row["last_name"]; ?></td>
                                     <td class="text-center"><?= $row["first_name"]; ?></td>
                                     <td class="text-center"><?= $row["middle_name"]; ?></td>
-                                    <td class="text-center"><?= $row["sex"]; ?></td>
-                                    <td class="text-center"><?= $row["created_at"]; ?></td>
                                     <td class="exclude-print">
                                         <button class="btn btn-success" onclick="addRecord(<?= $row['patient_id']; ?>)">
                                             <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,14 +73,14 @@
         </div>
 
         <?php
-        include_once('./includes/view-record-modal.php');
-        include_once('./includes/add-record-modal.php');
-        include_once('./includes/edit-record-modal.php');
-
+        include_once('./record/view-record-modal.php');
+        include_once('./record/add-record-modal.php');
+        include_once('./record/edit-record-modal.php');
         ?>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/2.0.6/js/dataTables.js"></script>
     <script src="admin.js"></script>

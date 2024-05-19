@@ -513,8 +513,11 @@ $("#dentalHistoryForm").submit((e) => {
                 text: "Patient Dental History added!",
                 icon: "success",
                 confirmButtonColor: "#198754",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  $("#addDentalHistoryModal").modal("hide");
+                }
               });
-              $("#addDentalHistoryModal").modal("hide");
             } else {
               Swal.fire({
                 icon: "error",
@@ -703,6 +706,7 @@ $("#addMedicalHistoryForm").submit((e) => {
       return this.id;
     })
     .get();
+  console.log(conditions);
   Swal.fire({
     title: "Are you sure?",
     text: "Add patient medical history",
@@ -778,7 +782,120 @@ function editMedicalHistory(e_patient_id) {
   $("#editMedicalHistoryModal").modal("show");
   $("#e_patient_id_med").text(e_patient_id);
 }
+$("#editMedicalHistoryForm").submit((e) => {
+  e.preventDefault();
+  const e_patient_id_med = $("#e_patient_id_med").text();
+  const e_physician = $("#e_physician").val();
+  const e_officeAddress = $("#e_officeAddress").val();
+  const e_specialty = $("#e_specialty").val();
+  const e_officeNumber = $("#e_officeNumber").val();
+  const e_goodHealth = $("input[name='e_goodHealth']:checked").val();
+  const e_medicalTreatment = $(
+    "input[name='e_medicalTreatment']:checked"
+  ).val();
+  const e_treatmentCondition = $("#e_treatmentCondition").val();
+  const e_seriousIllnessSurgery = $(
+    "input[name='e_seriousIllnessSurgery']:checked"
+  ).val();
+  const e_illnessSurgeryDetails = $("#e_illnessSurgeryDetails").val();
+  const e_hospitalized = $("input[name='e_hospitalized']:checked").val();
+  const e_hospitalizationDetails = $("#e_hospitalizationDetails").val();
+  const e_medications = $("input[name='e_medications']:checked").val();
+  const e_medicationDetails = $("#e_medicationDetails").val();
+  const e_tobaccoUse = $("input[name='e_tobaccoUse']:checked").val();
+  const e_alcoholDrugs = $("input[name='e_alcoholDrugs']:checked").val();
+  const e_allergies = $("input[name='allergy[]']:checked")
+    .map(function () {
+      return this.value;
+    })
+    .get();
+  const e_otherAllergies = $("#e_otherAllergies").val();
+  const e_bleedingTime = $("#e_bleedingTime").val();
+  const e_pregnant = $("input[name='e_pregnant']:checked").val();
+  const e_nursing = $("input[name='e_nursing']:checked").val();
+  const e_birthControl = $("input[name='e_birthControl']:checked").val();
+  const e_bloodType = $("#e_bloodType").val();
+  const e_bloodPressure = $("#e_bloodPressure").val();
+  const e_conditions = $("input[name='has[]']:checked")
+    .map(function () {
+      return this.id;
+    })
+    .get();
 
+  console.log(e_conditions);
+  Swal.fire({
+    title: "Are you sure?",
+    text: "Update patient medical history",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#198754",
+    confirmButtonText: "Update",
+  })
+    .then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "./edit/edit-medical-history.php",
+          type: "POST",
+          data: {
+            e_patient_id_med: e_patient_id_med,
+            e_physician: e_physician,
+            e_officeAddress: e_officeAddress,
+            e_specialty: e_specialty,
+            e_officeNumber: e_officeNumber,
+            e_goodHealth: e_goodHealth,
+            e_medicalTreatment: e_medicalTreatment,
+            e_treatmentCondition: e_treatmentCondition,
+            e_seriousIllnessSurgery: e_seriousIllnessSurgery,
+            e_illnessSurgeryDetails: e_illnessSurgeryDetails,
+            e_hospitalized: e_hospitalized,
+            e_hospitalizationDetails: e_hospitalizationDetails,
+            e_medications: e_medications,
+            e_medicationDetails: e_medicationDetails,
+            e_tobaccoUse: e_tobaccoUse,
+            e_alcoholDrugs: e_alcoholDrugs,
+            e_allergies: e_allergies,
+            e_otherAllergies: e_otherAllergies,
+            e_bleedingTime: e_bleedingTime,
+            e_pregnant: e_pregnant,
+            e_nursing: e_nursing,
+            e_birthControl: e_birthControl,
+            e_bloodType: e_bloodType,
+            e_bloodPressure: e_bloodPressure,
+            e_conditions: e_conditions,
+          },
+          success: function (response) {
+            if (response == "success") {
+              Swal.fire({
+                title: "Success!",
+                text: "Patient Medical History updated!",
+                icon: "success",
+                confirmButtonColor: "#198754",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  $("#editMedicalHistoryModal").modal("hide");
+                }
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Failed to update patient medical history",
+                confirmButtonColor: "#198754",
+                text: response,
+              });
+            }
+          },
+        });
+      }
+    })
+    .catch((err) => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        confirmButtonColor: "#198754",
+        text: err,
+      });
+    });
+});
 function addRecord(patient_id) {
   $.post(
     "./view/view-record.php",
@@ -880,7 +997,75 @@ $("#addRecordForm").submit((e) => {
       });
     });
 });
-
+function editRecord(e_patient_id) {
+  $("#viewRecordModal").modal("hide");
+  $("#editRecordModal").modal("show");
+  $("#e_patient_id_record").text(e_patient_id);
+}
+$("#editRecordForm").submit((e) => {
+  e.preventDefault();
+  const e_patient_id = $("#e_patient_id_record").text();
+  const e_date = $("#e_date").val();
+  const e_diagnosis = $("#e_diagnosis").val();
+  const e_initialExamination = $("#e_initialExamination").val();
+  const e_treatment = $("#e_treatment").val();
+  const e_prescription = $("#e_prescription").val();
+  const e_followupDate = $("#e_followupDate").val();
+  Swal.fire({
+    title: "Are you sure?",
+    text: "Add record",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#198754",
+    confirmButtonText: "Add",
+  })
+    .then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "./edit/edit-record.php",
+          type: "POST",
+          data: {
+            patient_id: e_patient_id,
+            date: e_date,
+            diagnosis: e_diagnosis,
+            initialExamination: e_initialExamination,
+            treatment: e_treatment,
+            prescription: e_prescription,
+            followupDate: e_followupDate,
+          },
+          success: function (response) {
+            if (response == "success") {
+              Swal.fire({
+                title: "Success!",
+                text: "Record updated!",
+                icon: "success",
+                confirmButtonColor: "#198754",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  $("#editRecordModal").modal("hide");
+                }
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Failed to update record",
+                confirmButtonColor: "#198754",
+                text: response,
+              });
+            }
+          },
+        });
+      }
+    })
+    .catch((err) => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        confirmButtonColor: "#198754",
+        text: err,
+      });
+    });
+});
 /*
     Print Patient Information
 */

@@ -17,11 +17,12 @@
         include_once('./includes/sidebar.php');
         ?>
         <div class="container">
-            <h1 class="display-3 ">Add Patient Information</h1>
+            <h1 class="display-3">Add Patient Information</h1>
+
             <form id="addPatient">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group mb-2 ">
+                        <div class="form-group mb-2">
                             <label for="lastName">Last Name</label>
                             <input type="text" class="form-control" id="lastName" required placeholder="Enter last name">
                         </div>

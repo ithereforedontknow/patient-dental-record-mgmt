@@ -125,7 +125,7 @@
         </li>
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-secondary-emphasis" data-bs-toggle="collapse" data-bs-target="#report-collapse" aria-expanded="true">
-                <i class="fa-solid fa-notes-medical fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">Generate Report</span>
+                <i class="fa-solid fa-file-lines fa-xl mx-1" style="color: #198754;"></i> <span class="ms-2">Generate Report</span>
             </button>
             <div class="collapse show" id="report-collapse">
                 <div class="container mx-2">
@@ -136,7 +136,7 @@
         <li class="border-top my-3"></li>
         <li class="mb-1">
             <button id="logout" class="btn d-inline-flex align-items-center rounded border-0 fw-semibold text-secondary-emphasis">
-                <i class="fa-solid fa-right-from-bracket fa-xl mx-2" style="color: #198754;"></i> Logout
+                <i class="fa-solid fa-right-from-bracket fa-xl mx-1" style="color: #198754;"></i> Logout
             </button>
         </li>
     </ul>

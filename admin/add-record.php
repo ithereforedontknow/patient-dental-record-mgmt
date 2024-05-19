@@ -73,13 +73,14 @@
         </div>
 
         <?php
-        include_once('./includes/view-record-modal.php');
-        include_once('./includes/add-record-modal.php');
-        include_once('./includes/edit-record-modal.php');
+        include_once('./record/view-record-modal.php');
+        include_once('./record/add-record-modal.php');
+        include_once('./record/edit-record-modal.php');
         ?>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/2.0.6/js/dataTables.js"></script>
     <script src="admin.js"></script>

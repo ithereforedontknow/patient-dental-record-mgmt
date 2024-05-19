@@ -23,7 +23,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-target="#viewDentalHistory" data-bs-toggle="modal">Back</button>
-                <button type="submit" class="btn btn-success">Edit</button>
+                <button type="submit" class="btn btn-success">Update</button>
                 </form>
             </div>
         </div>
